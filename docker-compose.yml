@@ -1,0 +1,11 @@
+services:
+  eureka-server:
+    image: sgenlecroyant/eureka-server:latest
+    container_name: eureka-server
+    restart: always
+    ports:
+      - "1010:1010"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    networks:
+      - backend
