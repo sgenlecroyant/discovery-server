@@ -34,4 +34,4 @@ logging:
     com:
       netflix:
         eureka:
-          cluster: on
+          cluster: off
