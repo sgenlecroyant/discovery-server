@@ -43,12 +43,13 @@ pipeline {
             }
         }
 
-        stage('Deploy via Docker Compose') {
+        stage('Deploy via Spring Boot') {
             steps {
                 sh """
-                docker compose pull eureka-server
-                docker compose up -d eureka-server 
-                """
+                    pkill -f 'spring-boot:run' || true
+                    nohup mvn spring-boot:run > app.log 2>&1 &
+                    sleep 10
+                   """
             }
         }
     }
