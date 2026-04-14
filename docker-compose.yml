@@ -1,11 +1,15 @@
 services:
-  eureka-server:
-    image: sgenlecroyant/eureka-server:latest
-    container_name: eureka-server
+  discovery-server:
+    image: sgenlecroyant/discovery-server:latest
+    container_name: discovery-server
     restart: always
     ports:
       - "1010:1010"
     environment:
-      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_PROFILES_ACTIVE=default
     networks:
       - backend
+
+networks:
+  backend:
+    external: true

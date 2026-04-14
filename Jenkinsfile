@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "sgenlecroyant/eureka-server"
+        IMAGE_NAME = "sgenlecroyant/discovery-server"
         TAG = "0.0.1"
     }
 
@@ -18,39 +18,5 @@ pipeline {
             }
         }
 
-//        stage('Build Docker Image') {
-//            steps {
-//                sh """
-//                docker build -t $IMAGE_NAME:$TAG .
-//                docker tag $IMAGE_NAME:$TAG $IMAGE_NAME:latest
-//                """
-//            }
-//        }
-
-//        stage('Push Image') {
-//            steps {
-//                withCredentials([usernamePassword(
-//                        credentialsId: 'docker',
-//                        usernameVariable: 'USER',
-//                        passwordVariable: 'PASS'
-//                )]) {
-//                    sh """
-//                    echo $PASS | docker login -u $USER --password-stdin
-//                    docker push $IMAGE_NAME:$TAG
-//                    docker push $IMAGE_NAME:latest
-//                    """
-//                }
-//            }
-//        }
-
-        stage('Deploy via Spring Boot') {
-            steps {
-                sh """
-                    pkill -f 'spring-boot:run' || true
-                    nohup mvn spring-boot:run > app.log 2>&1 &
-                    sleep 10
-                   """
-            }
-        }
     }
 }
