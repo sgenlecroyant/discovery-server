@@ -13,8 +13,4 @@ public class DiscoveryServerApplication {
 		SpringApplication.run(DiscoveryServerApplication.class, args);
 	}
 
-	@GetMapping("/")
-	public String send(){
-		return "Hello World";
-	}
 }
