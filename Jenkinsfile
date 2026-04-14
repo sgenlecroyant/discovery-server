@@ -46,8 +46,8 @@ pipeline {
         stage('Deploy via Docker Compose') {
             steps {
                 sh """
-                docker-compose pull eureka-server
-                docker-compose up -d eureka-server
+                docker compose pull eureka-server
+                docker compose up -d eureka-server
                 """
             }
         }
