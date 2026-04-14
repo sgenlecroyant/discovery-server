@@ -47,7 +47,7 @@ pipeline {
             steps {
                 sh """
                 docker compose pull eureka-server
-                docker compose up -d eureka-server
+                docker compose up -d eureka-server 
                 """
             }
         }
