@@ -6,10 +6,15 @@ services:
     ports:
       - "1010:1010"
     environment:
-      - SPRING_PROFILES_ACTIVE=prod
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
-#      - /usr/bin/docker:/usr/bin/docker
+      SPRING_PROFILES_ACTIVE: "prod"
+      SERVER_SSL_ENABLED: "true"
+      SERVER_SSL_KEY_STORE: /app/eureka.p12
+      SERVER_SSL_KEY_STORE_PASSWORD: ${SERVER_SSL_KEY_STORE_PASSWORD}
+      SERVER_SSL_KEY_ALIAS: eureka
+
+    volumes:
+      - /opt/sales-project/security-certificates/eureka.p12:/app/eureka.p12
+      - /opt/sales-project/infrastructure/discovery-server/.env:/var/lib/docker/volumes/jenkins_home/_data/workspace/discovery-server
     networks:
       - backend
 
