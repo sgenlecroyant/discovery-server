@@ -9,25 +9,6 @@ server:
 spring:
   application:
     name: discovery-server
-  security:
-    user:
-      password: ${EUREKA_USERNAME:sgen}
-      name: ${EUREKA_PASSWORD:sgen}
-
-eureka:
-  client:
-    service-url:
-      defaultZone: https://${EUREKA_USERNAME:sgen}:${EUREKA_PASSWORD:sgen}@localhost:1010/eureka/
-    register-with-eureka: false
-    fetch-registry: false
-  server:
-    enable-self-preservation: true
-    renewal-percent-threshold: 0.85
-
-  instance:
-    secure-port-enabled: true
-    non-secure-port-enabled: false
-    secure-port: ${server.port}
 
 logging:
   level:
