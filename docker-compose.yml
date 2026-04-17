@@ -14,7 +14,6 @@ services:
 
     volumes:
       - /opt/sales-project/security-certificates/eureka.p12:/app/eureka.p12
-      - /opt/sales-project/infrastructure/discovery-server/.env:/var/lib/docker/volumes/jenkins_home/_data/workspace/discovery-server
     networks:
       - backend
 
