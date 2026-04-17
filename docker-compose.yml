@@ -7,9 +7,9 @@ services:
       - "1010:1010"
     environment:
       - SPRING_PROFILES_ACTIVE=prod
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/bin/docker:/usr/bin/docker
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#      - /usr/bin/docker:/usr/bin/docker
     networks:
       - backend
 
