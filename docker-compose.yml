@@ -1,6 +1,6 @@
 services:
   discovery-server:
-    image: sgenlecroyant/discovery-server:latest
+    image: sgenlecroyant/system:discovery-server-v1
     container_name: discovery-server
     restart: always
     ports:
