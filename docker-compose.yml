@@ -3,17 +3,17 @@ services:
     image: sgenlecroyant/system:discovery-server-v1
     container_name: discovery-server
     restart: always
-    ports:
-      - "1010:1010"
+#    ports:
+#      - "1010:1010"
     environment:
       SPRING_PROFILES_ACTIVE: "prod"
-      SERVER_SSL_ENABLED: "true"
-      SERVER_SSL_KEY_STORE: /app/eureka.p12
-      SERVER_SSL_KEY_STORE_PASSWORD: ${SERVER_SSL_KEY_STORE_PASSWORD}
-      SERVER_SSL_KEY_ALIAS: eureka
+#      SERVER_SSL_ENABLED: "true"
+#      SERVER_SSL_KEY_STORE: /app/eureka.p12
+#      SERVER_SSL_KEY_STORE_PASSWORD: ${SERVER_SSL_KEY_STORE_PASSWORD}
+#      SERVER_SSL_KEY_ALIAS: eureka
 
-    volumes:
-      - /opt/sales-project/security-certificates/eureka.p12:/app/eureka.p12
+#    volumes:
+#      - /opt/sales-project/security-certificates/eureka.p12:/app/eureka.p12
     networks:
       - backend
 
