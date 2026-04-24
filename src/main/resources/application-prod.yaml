@@ -1,14 +1,6 @@
 server:
   port: 1010
-#  ssl:
-#    enabled: true
-#    key-store: ${EUREKA_SSL_KEY_STORE_FILE}
-#    key-store-password: ${EUREKA_SSL_KEY_STORE_PASSWORD}
-#    key-store-type: PKCS12
-#    key-alias: ${EUREKA_SSL_KEY_ALIAS}
 spring:
-  application:
-    name: discovery-server
   security:
     user:
       password: ${EUREKA_USERNAME:sgen}
@@ -16,18 +8,18 @@ spring:
 
 eureka:
   client:
-    service-url:
-      defaultZone: https://${EUREKA_USERNAME:sgen}:${EUREKA_PASSWORD:sgen}@localhost:1010/eureka/
+#    service-url:
+#      defaultZone: https://${EUREKA_USERNAME:sgen}:${EUREKA_PASSWORD:sgen}@localhost:1010/eureka/
     register-with-eureka: false
     fetch-registry: false
   server:
     enable-self-preservation: true
     renewal-percent-threshold: 0.85
 
-  instance:
-    secure-port-enabled: true
-    non-secure-port-enabled: false
-    secure-port: ${server.port}
+#  instance:
+#    secure-port-enabled: true
+#    non-secure-port-enabled: false
+#    secure-port: ${server.port}
 
 logging:
   level:
