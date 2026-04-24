@@ -1,11 +1,5 @@
 server:
   port: 1010
-#  ssl:
-#    enabled: true
-#    key-store: ${EUREKA_SSL_KEY_STORE_FILE}
-#    key-store-password: ${EUREKA_SSL_KEY_STORE_PASSWORD}
-#    key-store-type: PKCS12
-#    key-alias: ${EUREKA_SSL_KEY_ALIAS}
 spring:
   application:
     name: discovery-server
